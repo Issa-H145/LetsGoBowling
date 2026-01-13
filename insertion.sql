@@ -5,6 +5,8 @@ BOWLER_ID, BOWLER_LAST_NAME, BOWLER_FIRST_NAME, BOWLER_MIDDLE_INIT,
    BOWLER_STREET_ADDRESS, BOWLER_CITY, BOWLER_STATE, BOWLER_ZIP_CODE, 
    BOWLER_PHONE_NUMBER, TEAM_ID
 
+   TEAM_ID, TEAM_NAME, CAPTAIN_ID
+
 INSERT INTO Tournaments
   (TOURNEY_ID, TOURNEY_DATE, TOURNEY_LOCATION)
   VALUES (1, '2017-09-04', 'Red Rooster Lanes');
@@ -262,116 +264,145 @@ INSERT INTO Bowlers
   VALUES (32, 'Rosales', 'Joe', NULL, '908 W. Capital Way', 
    'Tacoma', 'WA', '98401', '(206) 555-9482', NULL);
 INSERT INTO Teams
-  (TeamID, TeamName, CaptainID)
+  (TEAM_ID, TEAM_NAME, CAPTAIN_ID)
   VALUES (1, 'Marlins', 2);
 INSERT INTO Teams
-  (TeamID, TeamName, CaptainID)
+  (TEAM_ID, TEAM_NAME, CAPTAIN_ID)
   VALUES (2, 'Sharks', 5);
 INSERT INTO Teams
-  (TeamID, TeamName, CaptainID)
+  (TEAM_ID, TEAM_NAME, CAPTAIN_ID)
   VALUES (3, 'Terrapins', 12);
 INSERT INTO Teams
-  (TeamID, TeamName, CaptainID)
+  (TEAM_ID, TEAM_NAME, CAPTAIN_ID)
   VALUES (4, 'Barracudas', 16);
 INSERT INTO Teams
-  (TeamID, TeamName, CaptainID)
+  (TEAM_ID, TEAM_NAME, CAPTAIN_ID)
   VALUES (5, 'Dolphins', 20);
 INSERT INTO Teams
-  (TeamID, TeamName, CaptainID)
+  (TEAM_ID, TEAM_NAME, CAPTAIN_ID)
   VALUES (6, 'Orcas', 24);
 INSERT INTO Teams
-  (TeamID, TeamName, CaptainID)
+  (TEAM_ID, TEAM_NAME, CAPTAIN_ID)
   VALUES (7, 'Manatees', 28);
 INSERT INTO Teams
-  (TeamID, TeamName, CaptainID)
+  (TEAM_ID, TEAM_NAME, CAPTAIN_ID)
   VALUES (8, 'Swordfish', 32);
 INSERT INTO Teams
-  (TeamID, TeamName, CaptainID)
+  (TEAM_ID, TEAM_NAME, CAPTAIN_ID)
   VALUES (9, 'Huckleberrys', 7);
+
 INSERT INTO Teams
-  (TeamID, TeamName, CaptainID)
+  (TEAM_ID, TEAM_NAME, CAPTAIN_ID)
   VALUES (10, 'MintJuleps', 22);
+
 UPDATE Bowlers 
-    SET TeamID = 1
-WHERE BowlerID IN (1, 2, 3, 4);
+    SET TEAM_ID = 1
+WHERE BOWLER_ID IN (1, 2, 3, 4);
+
 UPDATE Bowlers 
-SET TeamID = 2
-WHERE BowlerID IN (5, 6, 7, 8);
+SET TEAM_ID = 2
+WHERE BOWLER_ID IN (5, 6, 7, 8);
+
 UPDATE Bowlers 
-SET TeamID = 3
-WHERE BowlerID IN (9, 10, 11, 12);
+SET TEAM_ID = 3
+WHERE BOWLER_ID IN (9, 10, 11, 12);
+
 UPDATE Bowlers 
-SET TeamID = 4
-WHERE BowlerID IN (13, 14, 15, 16);
+SET TEAM_ID = 4
+WHERE BOWLER_ID IN (13, 14, 15, 16);
+
 UPDATE Bowlers 
-SET TeamID = 5
-WHERE BowlerID IN (17, 18, 19, 20);
+SET TEAM_ID = 5
+WHERE BOWLER_ID IN (17, 18, 19, 20);
+
 UPDATE Bowlers 
-SET TeamID = 6
-WHERE BowlerID IN (21, 22, 23, 24);
+SET TEAM_ID = 6
+WHERE BOWLER_ID IN (21, 22, 23, 24);
+
 UPDATE Bowlers 
-SET TeamID = 7
-WHERE BowlerID IN (25, 26, 27, 28);
+SET TEAM_ID = 7
+WHERE BOWLER_ID IN (25, 26, 27, 28);
+
 UPDATE Bowlers 
-SET TeamID = 8
-WHERE BowlerID IN (29, 30, 31, 32);
+SET TEAM_ID = 8
+WHERE BOWLER_ID IN (29, 30, 31, 32);
+
 INSERT INTO Tourney_Matches
   (MatchID, TOURNEY_ID, Lanes, OddLaneTeamID, EvenLaneTeamID)
   VALUES (1, 1, '01-02', 1, 2);
+
 INSERT INTO Tourney_Matches
   (MatchID, TOURNEY_ID, Lanes, OddLaneTeamID, EvenLaneTeamID)
   VALUES (2, 1, '03-04', 3, 4);
+
 INSERT INTO Tourney_Matches
   (MatchID, TOURNEY_ID, Lanes, OddLaneTeamID, EvenLaneTeamID)
   VALUES (3, 1, '05-06', 5, 6);
+
 INSERT INTO Tourney_Matches
   (MatchID, TOURNEY_ID, Lanes, OddLaneTeamID, EvenLaneTeamID)
   VALUES (4, 1, '07-08', 7, 8);
+
 INSERT INTO Tourney_Matches
   (MatchID, TOURNEY_ID, Lanes, OddLaneTeamID, EvenLaneTeamID)
   VALUES (5, 2, '21-22', 3, 1);
+
 INSERT INTO Tourney_Matches
   (MatchID, TOURNEY_ID, Lanes, OddLaneTeamID, EvenLaneTeamID)
   VALUES (6, 2, '23-24', 4, 2);
+
 INSERT INTO Tourney_Matches
   (MatchID, TOURNEY_ID, Lanes, OddLaneTeamID, EvenLaneTeamID)
   VALUES (7, 2, '25-26', 5, 7);
+
 INSERT INTO Tourney_Matches
   (MatchID, TOURNEY_ID, Lanes, OddLaneTeamID, EvenLaneTeamID)
   VALUES (8, 2, '27-28', 8, 6);
+
 INSERT INTO Tourney_Matches
   (MatchID, TOURNEY_ID, Lanes, OddLaneTeamID, EvenLaneTeamID)
   VALUES (9, 3, '15-16', 2, 3);
+
 INSERT INTO Tourney_Matches
   (MatchID, TOURNEY_ID, Lanes, OddLaneTeamID, EvenLaneTeamID)
   VALUES (10, 3, '17-18', 1, 4);
+
 INSERT INTO Tourney_Matches
   (MatchID, TOURNEY_ID, Lanes, OddLaneTeamID, EvenLaneTeamID)
   VALUES (11, 3, '19-20', 7, 6);
+
 INSERT INTO Tourney_Matches
   (MatchID, TOURNEY_ID, Lanes, OddLaneTeamID, EvenLaneTeamID)
   VALUES (12, 3, '21-22', 5, 8);
+
 INSERT INTO Tourney_Matches
   (MatchID, TOURNEY_ID, Lanes, OddLaneTeamID, EvenLaneTeamID)
   VALUES (13, 4, '09-10', 1, 5);
+
 INSERT INTO Tourney_Matches
   (MatchID, TOURNEY_ID, Lanes, OddLaneTeamID, EvenLaneTeamID)
   VALUES (14, 4, '11-12', 2, 6);
+
 INSERT INTO Tourney_Matches
   (MatchID, TOURNEY_ID, Lanes, OddLaneTeamID, EvenLaneTeamID)
   VALUES (15, 4, '13-14', 3, 7);
+
 INSERT INTO Tourney_Matches
   (MatchID, TOURNEY_ID, Lanes, OddLaneTeamID, EvenLaneTeamID)
   VALUES (16, 4, '15-16', 4, 8);
+
 INSERT INTO Tourney_Matches
   (MatchID, TOURNEY_ID, Lanes, OddLaneTeamID, EvenLaneTeamID)
   VALUES (17, 5, '11-12', 6, 1);
+
 INSERT INTO Tourney_Matches
   (MatchID, TOURNEY_ID, Lanes, OddLaneTeamID, EvenLaneTeamID)
   VALUES (18, 5, '13-14', 5, 2);
+
 INSERT INTO Tourney_Matches
   (MatchID, TOURNEY_ID, Lanes, OddLaneTeamID, EvenLaneTeamID)
   VALUES (19, 5, '15-16', 8, 3);
+  
 INSERT INTO Tourney_Matches
   (MatchID, TOURNEY_ID, Lanes, OddLaneTeamID, EvenLaneTeamID)
   VALUES (20, 5, '17-18', 7, 4);
